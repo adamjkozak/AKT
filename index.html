@@ -22,10 +22,30 @@ body {
     background: #111;
     box-shadow: 0 0 20px #0ff;
 }
+#info {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #f0f;
+    font-size: 1.2em;
+    line-height: 1.4;
+}
+#instructions {
+    margin-top: 10px;
+}
 </style>
 </head>
 <body>
 <canvas id="tetris" width="240" height="400"></canvas>
+<div id="info">
+  <div id="scoreboard">Score: <span id="score">0</span></div>
+  <div id="instructions">
+    <strong>Controls:</strong><br>
+    ←/→ – Move<br>
+    ↓ – Drop<br>
+    Q/W – Rotate
+  </div>
+</div>
 <script>
 const canvas = document.getElementById('tetris');
 const context = canvas.getContext('2d');
@@ -263,8 +283,5 @@ playerReset();
 updateScore();
 update();
 </script>
-<div style="position:absolute; top:10px; left:10px; color:#f0f; font-size:1.2em;">
-Score: <span id="score">0</span>
-</div>
 </body>
 </html>
